@@ -1,0 +1,34 @@
+#containerData {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+#containerData {
+  background-color: #16181d;
+}
+
+body,
+html,
+#containerData {
+  height: 25rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#containerData > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+#containerData > div > svg {
+  width: 500px;
+}
