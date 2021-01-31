@@ -1,4 +1,4 @@
-# This is a animational components based 
+# This repository is a animational components based 
 
 ## use the fork to get in your profile.
 
