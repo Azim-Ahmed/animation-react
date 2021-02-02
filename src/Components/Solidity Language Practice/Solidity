@@ -1,0 +1,286 @@
+//1st part with older version
+
+pragma solidity 0.4.24;
+
+contract MyContract {
+string value;
+
+constructor(){
+    value = "myValue";
+}
+
+function get() public view returns(string){
+    return value;
+}
+function set(string _value) public{
+    return _value;
+}
+
+} 
+
+
+//for the updated version of soliditty 
+//2nd part of new version#######
+
+pragma solidity 0.5.1;
+
+contract MyContract {
+string value;
+
+constructor() public{
+    value = "myValue";
+}
+
+function get() public view returns(string memory){
+    return value;
+}
+function set(string memory  _value) public{
+    value = _value;
+}
+
+}
+
+
+//3nd part of new version#######
+
+pragma solidity 0.5.1;
+
+contract MyContract {
+string public value;
+
+// { we can get value by writing  public to the declarative variable instead of this get( funtion ..... 
+//function get() public view returns(string memory){
+  //  return value;
+//}) }
+
+
+constructor() public{
+    value = "myValue";
+}
+
+function set(string memory  _value) public{
+    value = _value;
+}
+
+}
+
+output // string : myValue
+
+
+
+//4th part of new version#######(get_data without constructor)
+pragma solidity 0.5.1;
+
+contract MyContract {
+string public value = "myValue";
+
+//we can get the declarative value without using constructor; 
+
+function set(string memory  _value) public{
+    value = _value;
+}
+
+}
+
+
+//5th part of new version#######(if we want to constant value , we have to declare the constant)
+pragma solidity 0.5.1;
+
+contract MyContract {
+string public constant value = "myValue";
+
+}
+//this is const so , it won't set any data
+
+
+
+
+
+////6th part of new version#######( data types of solidity)
+
+pragma solidity 0.5.1;
+
+
+contract MyContract {
+    string public value = "myValue";
+string public constant value = "myConstantValue";
+bool public myBool = true;
+int public myInt = -1;
+uint public myUint = 1; ( it will execute only positive numbers)
+uint8 public myUint8 = 8;
+uint256 public myUint256 = 99999    ;
+
+}
+
+
+
+////7th part of new version#######( enum method :  numerated list. kind of state management , data list management, data management )
+
+pragma solidity 0.5.1;
+
+
+contract MyContract {
+enum State { waiting, Ready, Active} 
+State public state;
+
+constructor() public {
+state = State.waiting;
+}
+function activate () public {
+    state = State.Active;
+}
+function isActive() public view returns(bool){
+    return state == State.Active;
+}
+}
+
+
+
+////8th part of new version#######( struct funtion to store the data  in the array )
+
+
+
+pragma solidity 0.5.1;
+
+
+contract MyContract { 
+    Person[] public people;
+struct Person {
+    string _firstName;
+    string _lastName;
+}
+
+function addPerson(string memory _firstName, string memory _lastName) public {
+    people.push(Person(_firstName,_lastName));
+}
+}
+
+//we will get the data without context, so we have to think about it, by declaring uint256 dataType;
+
+//next version below; 
+// you can check person , people , addPerson, peopleCount ....
+
+pragma solidity 0.5.1;
+
+
+contract MyContract {
+    Person[] public people;
+    uint256 public peopleCount;
+struct Person {
+    string _firstName;
+    string _lastName;
+}
+
+function addPerson(string memory _firstName, string memory _lastName) public {
+    people.push(Person(_firstName,_lastName));
+    peopleCount += 1;
+}
+} 
+
+
+// extended version of 8th . to store and get data by mapping 
+
+
+
+ pragma solidity 0.5.1;
+
+contract MyContract {
+    uint256 public peopleCount = 0;
+    mapping(uint => Person) public people;
+struct Person {
+    uint _id;
+    string _firstName;
+    string _lastName;
+}
+
+function addPerson(string memory _firstName, string memory _lastName) public {
+    people[peopleCount] = Person(peopleCount , _firstName,_lastName);
+        peopleCount += 1;
+}
+}
+
+// extended version of 8th . to store and get data by mapping( with internal variable ) 
+
+
+ pragma solidity 0.5.1;
+
+contract MyContract {
+    uint256 public peopleCount = 0;
+    mapping(uint => Person) public people;
+struct Person {
+    uint _id;
+    string _firstName;
+    string _lastName;
+}
+
+function addPerson(string memory _firstName, string memory _lastName) public {
+        incrementCount();
+    people[peopleCount] = Person(peopleCount , _firstName,_lastName);
+}
+function incrementCount() internal {
+    peopleCount += 1;
+}
+} 
+
+// 9th version of this code(using private user . differences between admin (private) and user in the function .) {
+     modifier, onlyOwner, address variable
+     }
+
+
+ pragma solidity 0.5.1;
+
+contract MyContract {
+    uint256 public peopleCount = 0;
+    mapping(uint => Person) public people;
+
+    address owner;
+
+    modifier onlyOwner() {
+        require(msg.sender == owner);
+        _;
+    }
+struct Person {
+    uint _id;
+    string _firstName;
+    string _lastName;
+}
+
+
+constructor public(){
+    owner = msg.sender
+}
+
+
+function addPerson(string memory _firstName, string memory _lastName) public onlyOwner{
+        incrementCount();
+    people[peopleCount] = Person(peopleCount , _firstName,_lastName);
+}
+function incrementCount() internal {
+    peopleCount += 1;
+}
+} 
+
+check the validattion with various types opf account(upper side)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
