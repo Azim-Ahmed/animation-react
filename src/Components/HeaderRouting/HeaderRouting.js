@@ -5,8 +5,8 @@ const HeaderRouting = () => {
     return (
         <div>
             <h1 style={{ textAlign: "center" }}>
-                React Components Based Application
-   </h1>
+                <Link to="/">React Components Based Application</Link>
+            </h1>
             <ul style={{
                 background: "rgb(255,255,250)",
                 padding: "1.5rem",

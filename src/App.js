@@ -17,7 +17,7 @@ import HeaderRouting from './Components/HeaderRouting/HeaderRouting';
 const App = () => {
 
   return (
-    <div className="app">
+    <div className="App">
       <Router>
         <HeaderRouting />
         <Switch>
