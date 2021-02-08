@@ -1,31 +1,66 @@
 import './App.css';
-import { Provider } from 'react-redux'
-import store from './store';
-import Count from './Components/Count';
-import Control from './Components/Control';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 import InputData from './Components/Typed_typing';
 import SimpleAnimation from './Components/Simple_Animation_React/Simple_Animation';
 import SimpleAnimatedKeyFrames from './Components/Simple_Animation_React/SimpleAnimatedKeyFrames';
 import ReactSpringDemoOne from './Components/ReactSpringCSS/ReactSpringDemoOne';
 import ReactSpringDemoTwo from './Components/ReactSpringDemoTwo/ReactSpringDemoTwo';
 import ReactSpringDemoCard from './Components/ReactSpringDemoCard/ReactSpringDemoCard';
+import BeautifulDragAndDrop from './Components/DragAndDrop/BeautifulDragAndDrop';
+import FrequentQuestions from './Components/FrequentQuedtions/FrequentQuestions';
 
-function App() {
+const App = () => {
 
   return (
-    // <Provider store={store}>
-      <div className="App">
-        {/* <h1>This is redux</h1> */}
-        {/* <Count />
-        <Control /> */}
-      <SimpleAnimation/>
-      <SimpleAnimatedKeyFrames/>
-        <InputData />
-        <ReactSpringDemoOne/>
-        <ReactSpringDemoTwo/>
-        <ReactSpringDemoCard/>
-      </div>
-    // </Provider>
+    <div className="app">
+      <Router>
+        <Switch>
+          <Route path="/BeautifulDragAndDrop">
+            <BeautifulDragAndDrop />
+          </Route>
+          <Route path="/SimpleAnimation">
+            <SimpleAnimation />
+          </Route>
+          <Route path="/SimpleAnimatedKeyFrames">
+            <SimpleAnimatedKeyFrames />
+          </Route>
+          <Route path="/InputData">
+            <InputData />
+          </Route>
+          <Route path="/ReactSpringDemoOne">
+            <ReactSpringDemoOne />
+          </Route>
+          <Route path="/ReactSpringDemoTwo">
+            <ReactSpringDemoTwo />
+          </Route>
+
+          <Route path="/FrequentQuestions">
+            <FrequentQuestions />
+          </Route>
+          <Route path="/">
+
+          </Route>
+
+
+
+
+
+          {/* <Route path="/ReactSpringDemoCard">
+
+            <ReactSpringDemoCard />
+          </Route> */}
+
+        </Switch>
+      </Router>
+    </div>
+
+
+
+
   );
 }
 

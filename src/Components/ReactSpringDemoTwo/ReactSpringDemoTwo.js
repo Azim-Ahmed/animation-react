@@ -12,22 +12,23 @@ const ReactSpringDemoTwo = () => {
 
     const { radians } = useSpring({
         to: async next => {
-          while (1) await next({ radians: 2 * Math.PI })
+            while (1) await next({ radians: 2 * Math.PI })
         },
         from: { radians: 0 },
         config: { duration: 3500 },
         reset: true,
-      })
+    })
     return (
         <div id="demoTwoContainer">
             {
-                items.map(i => 
-                    <animated.div 
-                        key={i} 
+                items.map(i =>
+                    <animated.div
+                        key={i}
                         className="script-bf-box"
-                        style={{ transform: radians.interpolate(interp(i))
-                        }} 
-                     />)
+                        style={{
+                            transform: radians.interpolate(interp(i))
+                        }}
+                    />)
             }
         </div>
     )
