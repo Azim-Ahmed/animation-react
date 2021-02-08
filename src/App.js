@@ -2,7 +2,7 @@ import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route, Link
 } from "react-router-dom";
 import InputData from './Components/Typed_typing';
 import SimpleAnimation from './Components/Simple_Animation_React/Simple_Animation';
@@ -12,12 +12,14 @@ import ReactSpringDemoTwo from './Components/ReactSpringDemoTwo/ReactSpringDemoT
 import ReactSpringDemoCard from './Components/ReactSpringDemoCard/ReactSpringDemoCard';
 import BeautifulDragAndDrop from './Components/DragAndDrop/BeautifulDragAndDrop';
 import FrequentQuestions from './Components/FrequentQuedtions/FrequentQuestions';
+import HeaderRouting from './Components/HeaderRouting/HeaderRouting';
 
 const App = () => {
 
   return (
     <div className="app">
       <Router>
+        <HeaderRouting />
         <Switch>
           <Route path="/BeautifulDragAndDrop">
             <BeautifulDragAndDrop />
@@ -40,6 +42,18 @@ const App = () => {
 
           <Route path="/FrequentQuestions">
             <FrequentQuestions />
+          </Route>
+          <Route path="/">
+
+          </Route>
+          <Route path="/">
+
+          </Route>
+          <Route path="/">
+
+          </Route>
+          <Route path="/">
+
           </Route>
           <Route path="/">
 
