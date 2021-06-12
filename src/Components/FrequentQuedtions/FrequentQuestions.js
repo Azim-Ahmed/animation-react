@@ -30,7 +30,10 @@ function FrequentQuestions() {
                         }}
                     />
                     <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id, repudiandae quae quis distinctio aut tempore autem quos sapiente nihil nemo nobis? Accusantium reprehenderit ratione temporibus culpa? Numquam quia dolorum nulla.
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                        Id, repudiandae quae quis distinctio aut tempore autem quos 
+                        sapiente nihil nemo nobis? Accusantium reprehenderit ratione 
+                        temporibus culpa? Numquam quia dolorum nulla.
                     </p>
                 </div>
             </Collapsible>
@@ -49,7 +52,6 @@ function FrequentQuestions() {
                     component you like.
                </p>
             </Collapsible>
-
             <Collapsible
                 overflowWhenOpen="hidden"
                 triggerStyle={{

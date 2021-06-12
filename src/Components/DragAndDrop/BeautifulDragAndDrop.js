@@ -76,7 +76,7 @@ const BeautifulDragAndDrop = () => {
             <DragDropContext
                 onDragEnd={result =>
                     onDragEnd(
-                        result,
+                        result, 
                         columns,
                         setColumns
                     )}
@@ -135,7 +135,6 @@ const BeautifulDragAndDrop = () => {
                                                                             )
                                                                         }
                                                                     }
-
                                                                 </Draggable>
                                                             );
                                                         })
